@@ -1,0 +1,15 @@
+D:\Collage Material\4.Forth Level\Second term\data mining\ass1\Assignment1\src\App\bin\Debug\net7.0\App.exe
+D:\Collage Material\4.Forth Level\Second term\data mining\ass1\Assignment1\src\App\bin\Debug\net7.0\App.deps.json
+D:\Collage Material\4.Forth Level\Second term\data mining\ass1\Assignment1\src\App\bin\Debug\net7.0\App.runtimeconfig.json
+D:\Collage Material\4.Forth Level\Second term\data mining\ass1\Assignment1\src\App\bin\Debug\net7.0\App.dll
+D:\Collage Material\4.Forth Level\Second term\data mining\ass1\Assignment1\src\App\bin\Debug\net7.0\App.pdb
+D:\Collage Material\4.Forth Level\Second term\data mining\ass1\Assignment1\src\App\obj\Debug\net7.0\App.csproj.AssemblyReference.cache
+D:\Collage Material\4.Forth Level\Second term\data mining\ass1\Assignment1\src\App\obj\Debug\net7.0\App.GeneratedMSBuildEditorConfig.editorconfig
+D:\Collage Material\4.Forth Level\Second term\data mining\ass1\Assignment1\src\App\obj\Debug\net7.0\App.AssemblyInfoInputs.cache
+D:\Collage Material\4.Forth Level\Second term\data mining\ass1\Assignment1\src\App\obj\Debug\net7.0\App.AssemblyInfo.cs
+D:\Collage Material\4.Forth Level\Second term\data mining\ass1\Assignment1\src\App\obj\Debug\net7.0\App.csproj.CoreCompileInputs.cache
+D:\Collage Material\4.Forth Level\Second term\data mining\ass1\Assignment1\src\App\obj\Debug\net7.0\App.dll
+D:\Collage Material\4.Forth Level\Second term\data mining\ass1\Assignment1\src\App\obj\Debug\net7.0\refint\App.dll
+D:\Collage Material\4.Forth Level\Second term\data mining\ass1\Assignment1\src\App\obj\Debug\net7.0\App.pdb
+D:\Collage Material\4.Forth Level\Second term\data mining\ass1\Assignment1\src\App\obj\Debug\net7.0\App.genruntimeconfig.cache
+D:\Collage Material\4.Forth Level\Second term\data mining\ass1\Assignment1\src\App\obj\Debug\net7.0\ref\App.dll
