@@ -1,44 +1,5 @@
 ﻿using MoreLinq.Extensions;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 namespace app;
-
-/// <summary>
-/// List equality comparer to compare by list value
-/// </summary>
-public class ListEqualityComparer : IEqualityComparer<List<string>>
-{
-    public bool Equals(List<string> x, List<string> y)
-    {
-        if (x == null && y == null)
-            return true;
-        if (x == null && y != null)
-            return false;
-        if (x != null && y == null)
-            return false;
-        if(x.Count != y.Count) return false;
-        x.Sort();
-        y.Sort();
-        for(int i= 0; i<x.Count; i++) {
-            if (x[i] != y[i]) return false;
-        }
-        return true;
-    }
-
-    public int GetHashCode(List<string> obj)
-    {
-        // Generate a hash code based on the contents of the list
-        int hash = 17;
-        obj.Sort();
-        foreach (var item in obj)
-        {
-            hash = hash * 23 + item.GetHashCode();
-        }
-        return hash;
-    }
-}
-
 public class AprioriAlgorithm
 {
 
@@ -56,9 +17,9 @@ public class AprioriAlgorithm
         {
             candidates.Add(itemset);
         }
-        
+
         // generate combinations
-        if(candidates.Count < k)
+        if (candidates.Count < k)
             return new List<List<string>>();
 
         var combinations = candidates.Subsets(k).ToList();
@@ -74,7 +35,7 @@ public class AprioriAlgorithm
                     hash.Add(item);
 
             }
-            if(hash.Count == k)
+            if (hash.Count == k)
                 res.Add(hash.ToList());
         }
         //var combinations = GenerateCombinations(candidates, k);
@@ -109,7 +70,7 @@ public class AprioriAlgorithm
                 foreach (var val in itemList[j])
                     combination.Add(val);
 
-                if(combination.Count == k)
+                if (combination.Count == k)
                     combinations.Add(combination.ToList());
             }
         }
@@ -245,97 +206,9 @@ public class AprioriAlgorithm
             if (comparable.Equals(item.Key, antecedent))
                 supportAntecedent = item.Value;
 
-            if(comparable.Equals(item.Key, antecedent.Concat(consequent).ToList()))
+            if (comparable.Equals(item.Key, antecedent.Concat(consequent).ToList()))
                 supportRule = item.Value;
         }
         return supportRule / supportAntecedent;
-    }
-}
-public class FileReader
-{
-    public static List<List<string>> ReadTransactions(string filePath)
-    {
-        List<List<string>> transactions = new();
-        List<string> currentTransaction = new();
-        string? previousId = null;
-
-        using (var reader = new StreamReader(filePath))
-        {
-            if(reader == null)
-            {
-                throw new FileNotFoundException();
-            }
-            string? line;
-            int i = 1;
-            // Read and discard the header line
-            reader.ReadLine();
-            while (i <= 100 && (line = reader.ReadLine()) != null)
-            {
-                string[] items = line.Split(',');
-                if (items.Length >= 2)
-                {
-                    string currentId = items[0];
-                    if (previousId == null)
-                    {
-                        // Add the Items column to the current transaction
-                        currentTransaction.Add(items[1]);
-                    }
-                    else if (currentId != previousId)
-                    {
-                        // Add the Items column to the new transaction
-                        transactions.Add(currentTransaction);
-                        currentTransaction = new() { items[1] };
-                    }
-                    else
-                    {
-                        // Add the Items column to the current transaction
-                        currentTransaction.Add(items[1]); 
-                    }
-                    previousId = currentId;
-                }
-            }
-
-            // Add the last transaction
-            if (currentTransaction.Count > 0)
-            {
-                transactions.Add(currentTransaction);
-            }
-        }
-
-        return transactions;
-    }
-}
-
-public class Program
-{
-    // Example usage
-    public static void Main(string[] args)
-    {
-        //var transactions = new List<List<string>>
-        //{
-        //    new List<string> { "Bread", "Milk", "Eggs" },
-        //    new List<string> { "Bread", "Butter", "Salamon" },
-        //    new List<string> { "Milk", "Eggs", "Butter", "Meet", "Meet", "Meet" },
-        //    new List<string> { "Bread", "Milk", "Eggs", "Butter" }
-        //};
-        string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Bakery.csv");
-        var transactions = FileReader.ReadTransactions(path);
-        Console.Write("Min Support: ");
-        _ = double.TryParse(Console.ReadLine(), out double  minSupport);
-        Console.Write("Min Confidence: ");
-        _ = double.TryParse(Console.ReadLine(), out double minConfidence);
-        var result = AprioriAlgorithm.Apriori(transactions, minSupport, minConfidence);
-        var frequentItemsets = result.Item1;
-        var associationRules = result.Item2;
-        Console.WriteLine("Frequent Itemsets:");
-        foreach (var itemset in frequentItemsets)
-        {
-            Console.WriteLine(string.Join(", ", itemset.Key) + ": " + itemset.Value);
-        }
-        Console.WriteLine("\n\nAssociation Rules:");
-        foreach (var rule in associationRules)
-        {
-            Console.WriteLine(string.Join(", ", rule.Item1) + " => " + string.Join(", ", rule.Item2));
-        }
     }
 }

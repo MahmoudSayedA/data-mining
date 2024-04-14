@@ -1,0 +1,54 @@
+﻿@page
+@model PrivacyModel
+@{
+    ViewData["Title"] = "About the Task";
+}
+<h1>@ViewData["Title"]</h1>
+<h1>Assignment 1 - Association Rules</h1>
+<h2>Instructions:</h2>
+<ol>
+    <li>Assignment should be done individually; copies or any other method of cheating will be graded to - 5.</li>
+    <li>Each student can solve one problem or both, and in the second case we will consider the higher mark.</li>
+    <li>Total grade is 5 marks.</li>
+    <li>No late submissions are allowed.</li>
+    <li>Discussion will be during the office hours.</li>
+    <li>Deadline will be on 15/4 until 11:55 pm</li>
+    <li>Your program should include a user friendly interface.</li>
+    <li>The interface should enable user to select the percentage of the data needed to be read from the input file e.g. if the file contains 100 records, and the user needs to read 70% of the file then the analysis should be done on 70 records only.</li>
+    <li>
+        Using the programming language, you prefer, write a program with the following specifications:
+        <ul>
+            <li>
+                Inputs:
+                <ol type="i">
+                    <li>Excel, text, or CSV file</li>
+                    <li>Min support count</li>
+                    <li>Min confidence (percentage value)</li>
+                </ol>
+            </li>
+            <li>
+                Outputs:
+                <ol type="i">
+                    <li>The frequent item sets</li>
+                    <li>The strong association rules</li>
+                </ol>
+            </li>
+        </ul>
+    </li>
+</ol>
+
+<h2>Problem 1</h2>
+<h3>Description:</h3>
+<p>Consider the sets of transactions for a Bakery in the attached file "Bakery.csv".</p>
+<ul>
+    <li>Column transaction represent a set of items defined with their names at a specific time.</li>
+    <li>Each transaction has many items; each item is in a separate row.</li>
+</ul>
+
+<h3>Requirements:</h3>
+<ul>
+    <li>Write a program in any programming language that implements one of the association algorithms (Apriori, FP-Growth or vertical data format) on this set of transactions.</li>
+    <li>Minimum support & minimum confidence should be variable as per user input during runtime.</li>
+    <li>Then generate all association rules which can be mined from the transactions.</li>
+    <li>The final output of your program should show the frequent item sets and association rules with their confidence.</li>
+</ul>

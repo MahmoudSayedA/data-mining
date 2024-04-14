@@ -1,0 +1,57 @@
+# General
+.vscode/
+bin/
+obj/
+*.suo
+*.user
+*.bak
+*.cache
+*.log
+*.dll
+*.pdb
+
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+[Tt]est[Rr]esult*/
+[Bb]uild/
+
+# Visual Studio files
+*.userprefs
+*.sln.docstates
+*.suo
+*.user
+*.userosscache
+*.sln.ide
+
+# Rider files
+.idea/
+*.sln.iml
+
+# NuGet
+packages/
+*.nupkg
+*.paket.template
+paket-files/
+
+# Resharper
+_ReSharper*/
+*.resharper
+*.ReSharper*/
+*.DotSettings.user
+
+# Windows folders
+$RECYCLE.BIN/
+Thumbs.db
+ehthumbs.db
+
+# Mac OS
+.DS_Store
+
+# Logs and databases
+*.log
+*.sqlite
+*.sqlite3
+*.db

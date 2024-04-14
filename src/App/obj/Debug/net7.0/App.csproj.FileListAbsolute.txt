@@ -13,3 +13,6 @@ D:\Collage Material\4.Forth Level\Second term\data mining\ass1\Assignment1\src\A
 D:\Collage Material\4.Forth Level\Second term\data mining\ass1\Assignment1\src\App\obj\Debug\net7.0\App.pdb
 D:\Collage Material\4.Forth Level\Second term\data mining\ass1\Assignment1\src\App\obj\Debug\net7.0\App.genruntimeconfig.cache
 D:\Collage Material\4.Forth Level\Second term\data mining\ass1\Assignment1\src\App\obj\Debug\net7.0\ref\App.dll
+D:\Collage Material\4.Forth Level\Second term\data mining\ass1\Assignment1\src\App\bin\Debug\net7.0\MoreLinq.dll
+D:\Collage Material\4.Forth Level\Second term\data mining\ass1\Assignment1\src\App\obj\Debug\net7.0\App.csproj.CopyComplete
+D:\Collage Material\4.Forth Level\Second term\data mining\ass1\Assignment1\src\App\bin\Debug\net7.0\Bakery.csv

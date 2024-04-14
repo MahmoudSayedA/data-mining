@@ -11,4 +11,10 @@
     <PackageReference Include="morelinq" Version="4.2.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="Bakery.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

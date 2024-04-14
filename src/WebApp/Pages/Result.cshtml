@@ -1,0 +1,34 @@
+﻿@page
+@model WebApp.Pages.ResultModel
+@{
+    ViewData["Title"] = "Result";
+}
+<body>
+    <header>
+        <h1>Association Rules Results</h1>
+    </header>
+
+    <main>
+        <!-- Display frequent itemsets -->
+        <h2>Frequent Itemsets</h2>
+        <ul>
+            @foreach (var itemset in Model.FrequentItemsets)
+            {
+                <li>@string.Join(", ", itemset.Key) : @itemset.Value</li>
+            }
+        </ul>
+
+        <!-- Display association rules -->
+        <h2>Association Rules</h2>
+        <ul>
+            @foreach (var rule in Model.AssociationRules)
+            {
+                <li>@string.Join(", ", rule.Item1) => @string.Join(", ", rule.Item2)</li>
+            }
+        </ul>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Your Company Name. All rights reserved.</p>
+    </footer>
+</body>

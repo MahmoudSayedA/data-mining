@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "/BeCrqD220J0x2C3ar0Dg4qLzjGltm0IKB85Spybpzm03KRww9s28jMqa+KYBPGIKOI/jp/5qMEL6r3gypRlVw==",
+  "dgSpecHash": "PrPIEVd14Nckg4fLegy5mhwaClq12VeOMk2c7LWN0hJtttuwq49F/MWHFD4BvYaCUe24DYH96zmgk0wdlFPNlA==",
   "success": true,
   "projectFilePath": "D:\\Collage Material\\4.Forth Level\\Second term\\data mining\\ass1\\Assignment1\\src\\App\\App.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\mahmo\\.nuget\\packages\\morelinq\\4.2.0\\morelinq.4.2.0.nupkg.sha512"
+  ],
   "logs": []
 }

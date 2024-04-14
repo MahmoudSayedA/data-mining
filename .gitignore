@@ -1,3 +1,5 @@
 # documents
 *.docx
 .vscode/*
+/src/.vs
+/src/WebApp/wwwroot/lib

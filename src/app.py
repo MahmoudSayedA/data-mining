@@ -5,7 +5,7 @@ def generate_candidates(itemsets, k):
     candidates = set()
     for itemset in itemsets:
         for item in itemset:
-            candidates.add(frozenset([item]))
+            candidates.add(frozenset(item))
     return list(combinations(candidates, k))
 
 # Function to prune candidate itemsets using the Apriori property
@@ -18,10 +18,12 @@ def prune_candidates(itemsets, frequent_itemsets, k):
     return pruned_candidates
 
 # Function to check if one set is a subset of another
-def is_subset(candidate: frozenset, transaction):
-    for item in candidate:
-        if item not in transaction:
-            return False
+def is_subset(candidate, transaction):
+    candidate_set = set(candidate)
+    transaction_set = set(transaction)
+    for item in candidate_set:
+        if item not in transaction_set:
+            return True
     return True
 
 # Function to calculate support for each candidate itemset
@@ -29,8 +31,8 @@ def calculate_support(transactions, candidates):
     support_counts = {}
     for transaction in transactions:
         for candidate in candidates:
-            if isinstance(candidate, tuple):
-                candidate = frozenset(candidate)
+            # if isinstance(candidate, tuple):
+            #     candidate = frozenset(candidate)
             if is_subset(candidate, transaction):
                 support_counts[candidate] = support_counts.get(candidate, 0) + 1
     num_transactions = len(transactions)
@@ -59,7 +61,8 @@ def apriori(transactions, min_support, min_confidence):
         if not frequent_itemsets_k:
             break
         frequent_itemsets.update(frequent_itemsets_k)
-        itemsets = prune_candidates(candidates, frequent_itemsets_k.keys(), k)
+        #itemsets = prune_candidates(candidates, frequent_itemsets_k.keys(), k)
+        itemsets = frequent_itemsets
         k += 1
     
     association_rules = generate_association_rules(frequent_itemsets, min_confidence)
@@ -72,9 +75,9 @@ def generate_association_rules(frequent_itemsets, min_confidence):
     for itemset in frequent_itemsets.keys():
         if len(itemset) > 1:
             for i in range(1, len(itemset)):
-                antecedents = combinations(itemset, i)
+                antecedents = list(combinations(itemset, i))
                 for antecedent in antecedents:
-                    consequent = itemset.difference(antecedent)
+                    consequent = itemset.difference(antecedent) # tuble
                     rule = (frozenset(antecedent), consequent)
                     association_rules.append(rule)
     return [rule for rule in association_rules if calculate_confidence(frequent_itemsets, [rule])[rule] >= min_confidence]

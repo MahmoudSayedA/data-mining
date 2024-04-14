@@ -1,0 +1,63 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home";
+}
+
+<h1>Apriori Algorithm</h1>
+<div class="container my-5 center">
+    <form method="post" enctype="multipart/form-data">
+        <div class="mb-3">
+            <label for="file">Choose a file:</label>
+            <input type="file" id="inputFile" name="inputFile" required>
+        </div>
+        <div class="mb-3">
+            <label for="records" class="form-label">Number of Records:</label>
+            <input type="number" class="form-control" id="records" placeholder="Num of records to read" name="records" required>
+        </div>
+        <div class="mb-3">
+            <label for="minSupport">Min Support:</label>
+            <input type="number" step="0.01" class="form-control" id="minSupport" name="minSupport" placeholder="Min support Conut" required>
+        </div>
+        <div class="mb-3">
+            <label for="minConfidence">Min Confidence:</label>
+            <input type="number" step="0.01" class="form-control" id="minConfidence" name="minConfidence" placeholder="Min Confidence" required>
+        </div>
+        <button type="submit" class="btn btn-dark">Submit</button>
+    </form>
+</div>
+
+@if(Model.FrequentItemsets != null && Model.AssociationRules != null){
+    <div class="container my-5 center">
+        <h1>Association Rules Results</h1>
+        <!-- Display frequent itemsets -->
+        <h2>Frequent Itemsets</h2>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <td>#count</td>
+                    <td>Frequent Itemset</td>
+                    <td>Support</td>
+                </tr>
+            </thead>
+            @foreach (var itemset in Model.FrequentItemsets)
+            {
+                <tr>
+                    <td>@itemset.Key.Count</td>
+                    <td>@string.Join(", ",itemset.Key)</td>
+                    <td>@($"{itemset.Value:F3}")</td>
+                </tr>
+            }
+        </table>
+    </div>
+    <div class="container my-5 center">
+        <!-- Display association rules -->
+        <h2>Association Rules</h2>
+        <ul>
+            @foreach (var rule in Model.AssociationRules)
+            {
+                <li class="list-group-item">@string.Join(", ", rule.Item1) => @string.Join(", ", rule.Item2)</li>
+            }
+        </ul>
+    </div>
+}
