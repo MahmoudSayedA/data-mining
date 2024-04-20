@@ -5,7 +5,7 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "App", "App\App.csproj", "{3FC5B1D0-D215-45EE-BBFA-9E49D247C99D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApp", "WebApp\WebApp.csproj", "{4D939B9C-E8A9-4521-8515-E755E4AE2EBA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApp", "WebApp\WebApp.csproj", "{4D939B9C-E8A9-4521-8515-E755E4AE2EBA}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{96D33C7A-075D-4659-B072-E3AC76B3B83A}"
 	ProjectSection(SolutionItems) = preProject

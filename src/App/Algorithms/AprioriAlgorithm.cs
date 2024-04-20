@@ -1,5 +1,7 @@
-﻿using MoreLinq.Extensions;
-namespace app;
+﻿using App.Helpers;
+using MoreLinq.Extensions;
+namespace App.Algorithms;
+
 public class AprioriAlgorithm
 {
 

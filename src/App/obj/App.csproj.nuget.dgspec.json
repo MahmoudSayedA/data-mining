@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Collage Material\\4.Forth Level\\Second term\\data mining\\ass1\\Assignment1\\src\\App\\App.csproj": {}
+    "D:\\Collage Material\\4.Forth Level\\Second term\\data mining\\ass\\Assignment1\\src\\App\\App.csproj": {}
   },
   "projects": {
-    "D:\\Collage Material\\4.Forth Level\\Second term\\data mining\\ass1\\Assignment1\\src\\App\\App.csproj": {
+    "D:\\Collage Material\\4.Forth Level\\Second term\\data mining\\ass\\Assignment1\\src\\App\\App.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Collage Material\\4.Forth Level\\Second term\\data mining\\ass1\\Assignment1\\src\\App\\App.csproj",
+        "projectUniqueName": "D:\\Collage Material\\4.Forth Level\\Second term\\data mining\\ass\\Assignment1\\src\\App\\App.csproj",
         "projectName": "App",
-        "projectPath": "D:\\Collage Material\\4.Forth Level\\Second term\\data mining\\ass1\\Assignment1\\src\\App\\App.csproj",
+        "projectPath": "D:\\Collage Material\\4.Forth Level\\Second term\\data mining\\ass\\Assignment1\\src\\App\\App.csproj",
         "packagesPath": "C:\\Users\\mahmo\\.nuget\\packages\\",
-        "outputPath": "D:\\Collage Material\\4.Forth Level\\Second term\\data mining\\ass1\\Assignment1\\src\\App\\obj\\",
+        "outputPath": "D:\\Collage Material\\4.Forth Level\\Second term\\data mining\\ass\\Assignment1\\src\\App\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\mahmo\\AppData\\Roaming\\NuGet\\NuGet.Config",

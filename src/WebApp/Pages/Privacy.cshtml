@@ -3,52 +3,120 @@
 @{
     ViewData["Title"] = "About the Task";
 }
-<h1>@ViewData["Title"]</h1>
-<h1>Assignment 1 - Association Rules</h1>
-<h2>Instructions:</h2>
-<ol>
-    <li>Assignment should be done individually; copies or any other method of cheating will be graded to - 5.</li>
-    <li>Each student can solve one problem or both, and in the second case we will consider the higher mark.</li>
-    <li>Total grade is 5 marks.</li>
-    <li>No late submissions are allowed.</li>
-    <li>Discussion will be during the office hours.</li>
-    <li>Deadline will be on 15/4 until 11:55 pm</li>
-    <li>Your program should include a user friendly interface.</li>
-    <li>The interface should enable user to select the percentage of the data needed to be read from the input file e.g. if the file contains 100 records, and the user needs to read 70% of the file then the analysis should be done on 70 records only.</li>
-    <li>
-        Using the programming language, you prefer, write a program with the following specifications:
-        <ul>
+<div class="container">
+    <h1>@ViewData["Title"]</h1>
+    <h1>Assignment 1 - Association Rules</h1>
+    <h2>Instructions:</h2>
+    <ol>
+        <li>Assignment should be done individually; copies or any other method of cheating will be graded to - 5.</li>
+        <li>Each student can solve one problem or both, and in the second case we will consider the higher mark.</li>
+        <li>Total grade is 5 marks.</li>
+        <li>No late submissions are allowed.</li>
+        <li>Discussion will be during the office hours.</li>
+        <li>Deadline will be on 15/4 until 11:55 pm</li>
+        <li>Your program should include a user friendly interface.</li>
+        <li>The interface should enable user to select the percentage of the data needed to be read from the input file e.g. if the file contains 100 records, and the user needs to read 70% of the file then the analysis should be done on 70 records only.</li>
+        <li>
+            Using the programming language, you prefer, write a program with the following specifications:
+            <ul>
+                <li>
+                    Inputs:
+                    <ol type="i">
+                        <li>Excel, text, or CSV file</li>
+                        <li>Min support count</li>
+                        <li>Min confidence (percentage value)</li>
+                    </ol>
+                </li>
+                <li>
+                    Outputs:
+                    <ol type="i">
+                        <li>The frequent item sets</li>
+                        <li>The strong association rules</li>
+                    </ol>
+                </li>
+            </ul>
+        </li>
+    </ol>
+
+    <h2>Problem 1</h2>
+    <h3>Description:</h3>
+    <p>Consider the sets of transactions for a Bakery in the attached file "Bakery.csv".</p>
+    <ul>
+        <li>Column transaction represent a set of items defined with their names at a specific time.</li>
+        <li>Each transaction has many items; each item is in a separate row.</li>
+    </ul>
+
+    <h3>Requirements:</h3>
+    <ul>
+        <li>Write a program in any programming language that implements one of the association algorithms (Apriori, FP-Growth or vertical data format) on this set of transactions.</li>
+        <li>Minimum support & minimum confidence should be variable as per user input during runtime.</li>
+        <li>Then generate all association rules which can be mined from the transactions.</li>
+        <li>The final output of your program should show the frequent item sets and association rules with their confidence.</li>
+    </ul>
+</div>
+<div class="container">
+    
+    <h1>Assignment 2 - Clustering</h1>
+    <section>
+        <h2>Instructions:</h2>
+        <ol class="list-group">
+            <li>Assignment should be done individually, copies or any other method of cheating will be graded to - 5.</li>
+            <li>Each student can solve one problem or both, and in the second case we will consider the higher mark.</li>
+            <li>Total grade is 5 marks.</li>
+            <li>The deadline for this assignment will be on 20-April 11:55 on classroom, no late submissions are allowed.</li>
+            <li>Discussion will be during the office hours of Eng. Doaa Ghaleb. The discussion table will be sent on 20-April.</li>
+            <li>Your program should include a graphical user interface.</li>
+            <li>The interface should enable the user to select the percentage of the data needed to be read from the input file. For example, if the file contains 100 records, and the user needs to read 70% of the file, then the analysis should be done on 70 records only.</li>
+            <li>The program should enable the user to select the file needed to be clustered.</li>
+            <li>Initial centroid should be chosen randomly.</li>
+            <li>You should detect the outliers (if exists).</li>
             <li>
-                Inputs:
-                <ol type="i">
-                    <li>Excel, text, or CSV file</li>
-                    <li>Min support count</li>
-                    <li>Min confidence (percentage value)</li>
+                Using the programming language you prefer, write a program with the following specifications:
+                <ol type="a">
+                    <li>
+                        Inputs:
+                        <ol type="i">
+                            <li>A file with a set of transactions (e.g., Excel, text, or CSV file) – (The file attached).</li>
+                            <li>The percentage of the data needed to be read from the input file.</li>
+                            <li>Number of clusters - K - will be provided from the user as an input.</li>
+                        </ol>
+                    </li>
+                    <li>
+                        Outputs:
+                        <ol type="i">
+                            <li>The final output of your program should show the content of each cluster and show outlier records.</li>
+                        </ol>
+                    </li>
                 </ol>
             </li>
-            <li>
-                Outputs:
-                <ol type="i">
-                    <li>The frequent item sets</li>
-                    <li>The strong association rules</li>
-                </ol>
-            </li>
+        </ol>
+    </section>
+    <section>
+        <h2>Problem 1</h2>
+        <p>Description:</p>
+        <ul class="list-group">
+            <li>Consider this dataset which is scraped from IMDB’s official website in the imdb_top_2000_movies.csv file. It contains the ratings of top 2000 movies between 1921 and 2010.</li>
+            <li>Write a program in any programming language you prefer to group the movies based on the similarity of user IMDB ratings.</li>
+            <li>You should use k-means algorithm to cluster the movies to k clusters.</li>
+            <li>Number of clusters (k) will be provided from the user as an input.</li>
+            <li>Initial centroid should be chosen randomly.</li>
+            <li>You should use Euclidean distance as your distance function.</li>
+            <li>You should detect outlier data (if exists).</li>
+            <li>The final output of your program should show k lists of users and show outlier user’s records.</li>
         </ul>
-    </li>
-</ol>
-
-<h2>Problem 1</h2>
-<h3>Description:</h3>
-<p>Consider the sets of transactions for a Bakery in the attached file "Bakery.csv".</p>
-<ul>
-    <li>Column transaction represent a set of items defined with their names at a specific time.</li>
-    <li>Each transaction has many items; each item is in a separate row.</li>
-</ul>
-
-<h3>Requirements:</h3>
-<ul>
-    <li>Write a program in any programming language that implements one of the association algorithms (Apriori, FP-Growth or vertical data format) on this set of transactions.</li>
-    <li>Minimum support & minimum confidence should be variable as per user input during runtime.</li>
-    <li>Then generate all association rules which can be mined from the transactions.</li>
-    <li>The final output of your program should show the frequent item sets and association rules with their confidence.</li>
-</ul>
+    </section>
+    <section>
+        <h2>Problem 2</h2>
+        <p>Description:</p>
+        <ul class="list-group">
+            <li>Consider Facebook live interactions dataset in Facebook_live.csv file, it contains statistics regarding different interactions (e.g. comments, shares, like, love, wow, ...etc.) in different type of posts represented by status type column.</li>
+            <li>You are required to implement k-means clustering in any programming language you prefer to find intrinsic groups within the dataset that display the same status_type behavior.</li>
+            <li>Notice that the status_type behavior variable consists of posts of a different nature (video, photos, statuses, and links).</li>
+            <li>Number of clusters (k) will be provided from the user as an input.</li>
+            <li>Initial centroid should be chosen randomly.</li>
+            <li>You should use Manhattan distance as your distance function.</li>
+            <li>You should detect outlier data (if exists).</li>
+            <li>The final output of your program should show k lists of states and show outlier product’s records.</li>
+        </ul>
+    </section>
+</div>

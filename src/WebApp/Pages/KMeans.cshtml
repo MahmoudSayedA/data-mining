@@ -1,0 +1,72 @@
+﻿@page
+@model WebApp.Pages.KMeansModel
+@{
+}
+<div class="container mx-5">
+    <h1>K-Means Clustering Algorithm</h1>
+    <form method="post" enctype="multipart/form-data">
+        <div class="mb-3">
+            <label for="file" class="form-label">Select a CSV file:</label>
+            <input type="file" class="form-control" id="inputFile" name="inputFile" accept=".csv" required>
+        </div>
+        <div class="mb-3">
+            <label for="maxRecords" class="form-label">Maximum number of records:</label>
+            <input type="number" class="form-control" id="maxRecords" name="maxRecords" min="1" required>
+        </div>
+        <div class="mb-3">
+            <label for="numClusters" class="form-label">Number of clusters:</label>
+            <input type="number" class="form-control" id="numClusters" name="numClusters" min="2" required>
+        </div>
+
+        <button type="submit" class="btn btn-dark">Cluster</button>
+    </form>
+</div>
+
+@if(Model.ClustersResults != null){
+    <div class="container mx-5">
+        <h1>Clusters Results</h1>
+        <div class="align-content-center">
+            @if (Model != null)
+            {
+                @for (int i = 0; i < Model.ClustersResults.Count; i++)
+                {
+                    <div class="w-50 my-3">
+                        <h3>Cluster @i - #@Model.ClustersResults[i].Count</h3>
+                        <ul class="list-group">
+                            <li class="list-group-item-primary d-flex justify-content-between align-items-center"><p>Movie Name</p><p>IMDB Rating</p></li>
+                            @foreach (var movie in Model.ClustersResults[i])
+                            {
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    @movie.Name
+                                    <span class="badge bg-primary badge-pill p-2">@movie.IMDBRating</span>
+                                </li>
+                            }
+                        </ul>
+                    </div>
+                }
+            }
+            else
+            {
+                <p>No clusters to display.</p>
+            }
+        </div>
+    </div>
+}
+
+@if(Model != null && Model.Outliers != null){
+    <div class="container mx-5">
+        <h3>Outliers - #@Model.Outliers.Count</h3>
+        <div class="w-50 my-3">
+            <ul class="list-group">
+                <li class="list-group-item-primary d-flex justify-content-between align-items-center"><p>Movie Name</p><p>IMDB Rating</p></li>
+                @foreach (var movie in Model.Outliers)
+                {
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        @movie.Name
+                        <span class="badge bg-primary badge-pill p-2">@movie.IMDBRating</span>
+                    </li>
+                }
+            </ul>
+        </div>
+</div>
+}
