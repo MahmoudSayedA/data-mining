@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diabetes Prediction</title>
+    <style>
+        @keyframes color {
+            0% {
+                background: #e0e1dd;
+            }
+
+            20% {
+                background: #bbd0ff;
+            }
+
+            40% {
+                background: #b8c0ff;
+            }
+
+            60% {
+                background: #b8c0ff;
+            }
+
+            80% {
+                background: #bbd0ff;
+            }
+
+            100% {
+                background: #e0e1dd;
+            }
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 60px 0px;
+            padding: 0;
+            background: #e0e1dd; /* Fallback */
+            animation: color 9s infinite linear;
+            padding: 2em;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+
+        form {
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            border-radius: 2rem;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover{
+            color: #007bff;
+            background-color: #fff;
+        }
+        button:focus{
+            border-color: #007bff;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        p {
+            text-align: left;
+            font-size: 19px;
+            margin-top: 20px;
+        }
+        input{
+            width: 100PX;
+            padding: 5px;
+            font-size: 17px;
+            color: #007bff;
+            outline-color: #007bff;
+            border-color: transparent;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <h1>Diabetes Prediction</h1>
+        <form id="train-form">
+            <label for="record-count">Number of Records:</label>
+            <input type="number" id="record-count" name="record-count" value="500" min="1"><br><br>
+            <button type="button" id="train-button">Train</button>
+        </form>
+    </section>
+    <section id="result"></section>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#train-button').click(function() {
+            // Get the value of record-count input
+            var recordCount = $('#record-count').val();
+            
+            // Create form data object
+            var formData = {
+            'record-count': recordCount
+            };
+                $.ajax({
+                    type: 'POST',
+                    url: '/train',
+                    data: formData,
+                    success: function(response) {
+                        $('#result').html('<p>DecisionTree Accuracy: ' + response.decision_tree_accuracy + '</p> <p>NaiveBayes Accuracy: ' + response.naive_bayes_accuracy + '</p>');
+                        console.log(response)
+                        // Render predictions in a table
+                        var table = '<table><tr><th>gender</th><th>age</th><th>hypertension</th><th>heart_disease</th><th>smoking_history</th><th>bmi</th><th>HbA1c_level</th><th>blood_glucose_level</th><th>predicted_diabetes_DT</th><th>predicted_diabetes_NB</th></tr>';
+                        $.each(response.data, function(index, item) {
+                            console.log(index, item);
+                            table += '<tr><td>' 
+                                + item.gender + '</td><td>' 
+                                + item.age + '</td><td>' + 
+                                + item.hypertension + '</td><td>' + 
+                                + item.heart_disease + '</td><td>'
+                                + item.smoking_history + '</td><td>' 
+                                + item.bmi + '</td><td>' 
+                                + item.HbA1c_level + '</td><td>' 
+                                + item.blood_glucose_level + '</td><td>'
+                                + item.predicted_diabetes_DT + '</td><td>'
+                                + item.predicted_diabetes_NB + '</td></tr>';
+                        });
+                        table += '</table>';
+                        $('#result').append(table);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

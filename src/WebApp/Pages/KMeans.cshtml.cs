@@ -11,8 +11,9 @@ namespace WebApp.Pages
         [BindProperty]
         public IFormFile? InputFile { get; set; }
 
+        public int NumOfRecords { get; set; } = 2000;
         [BindProperty]
-        public int MaxRecords { get; set; }
+        public double MaxRecords { get; set; }
 
         [BindProperty]
         public int NumClusters { get; set; }
@@ -34,7 +35,8 @@ namespace WebApp.Pages
                 {
                     await InputFile.CopyToAsync(memoryStream);
                     memoryStream.Position = 0;
-                    movies = await CsvFileReader.ReadMovies(memoryStream, MaxRecords);
+                    int toBeRead = (int)(MaxRecords/100 * NumOfRecords);
+                    movies = await CsvFileReader.ReadMovies(memoryStream, (int)toBeRead);
                 }
                 var outliers = KMeans.KMeans.FindOutliers(movies);
                 Outliers = outliers;
